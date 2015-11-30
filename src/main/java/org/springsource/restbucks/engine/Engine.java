@@ -65,7 +65,7 @@ class Engine implements InProgressAware {
 
 		ordersInProgress.add(order);
 
-		LOG.info("Starting to process order {}.", order);
+		log.info("Starting to process order {}.", order);
 
 		try {
 			Thread.sleep(5000);
@@ -78,6 +78,6 @@ class Engine implements InProgressAware {
 
 		ordersInProgress.remove(order);
 
-		LOG.info("Finished processing order {}.", order);
+		log.info("Finished processing order {}.", order);
 	}
 }

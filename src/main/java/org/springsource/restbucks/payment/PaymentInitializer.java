@@ -44,6 +44,6 @@ class PaymentInitializer {
 
 		creditCard = repository.save(creditCard);
 
-		LOG.info("Credit card {} created!", creditCard);
+		log.info("Credit card {} created!", creditCard);
 	}
 }
