@@ -17,8 +17,6 @@ package org.springsource.restbucks;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
@@ -41,10 +39,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @EntityScan(basePackageClasses = { Restbucks.class, Jsr310JpaConverters.class })
 // Explicitly enable entity links as Boot fails to auto-configure them
 @EnableEntityLinks
-// Example CGLib proxies for @Async methods to let {@link Engine#handleOrderPaidEvent} work although {@link Engine}
-// implements an interface
-@EnableAsync(proxyTargetClass = true)
-public class Restbucks extends SpringBootServletInitializer {
+@EnableAsync
+public class Restbucks {
 
 	public static String CURIE_NAMESPACE = "restbucks";
 
@@ -59,15 +55,5 @@ public class Restbucks extends SpringBootServletInitializer {
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(Restbucks.class, args);
-	}
-
-	/**
-	 * Allows the application to be started when being deployed into a Servlet 3 container.
-	 * 
-	 * @see org.springframework.boot.web.SpringBootServletInitializer#configure(org.springframework.boot.builder.SpringApplicationBuilder)
-	 */
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(Restbucks.class);
 	}
 }
