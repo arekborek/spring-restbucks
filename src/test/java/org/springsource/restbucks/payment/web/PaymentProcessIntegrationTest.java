@@ -52,12 +52,18 @@ import com.jayway.jsonpath.JsonPath;
 @Slf4j
 public class PaymentProcessIntegrationTest extends AbstractWebIntegrationTest {
 
-	private static final String ORDERS_REL = Restbucks.CURIE_NAMESPACE + ":orders";
-	private static final String ORDER_REL = Restbucks.CURIE_NAMESPACE + ":order";
-	private static final String RECEIPT_REL = Restbucks.CURIE_NAMESPACE + ":receipt";
-	private static final String CANCEL_REL = Restbucks.CURIE_NAMESPACE + ":cancel";
-	private static final String UPDATE_REL = Restbucks.CURIE_NAMESPACE + ":update";
-	private static final String PAYMENT_REL = Restbucks.CURIE_NAMESPACE + ":payment";
+//	private static final String ORDERS_REL = Restbucks.CURIE_NAMESPACE + ":orders";
+	private static final String ORDERS_REL = "orders";
+//	private static final String ORDER_REL = Restbucks.CURIE_NAMESPACE + ":order";
+	private static final String ORDER_REL = "order";
+//	private static final String RECEIPT_REL = Restbucks.CURIE_NAMESPACE + ":receipt";
+	private static final String RECEIPT_REL = "receipt";
+//	private static final String CANCEL_REL = Restbucks.CURIE_NAMESPACE + ":cancel";
+	private static final String CANCEL_REL = "cancel";
+//	private static final String UPDATE_REL = Restbucks.CURIE_NAMESPACE + ":update";
+	private static final String UPDATE_REL = "update";
+//	private static final String PAYMENT_REL = Restbucks.CURIE_NAMESPACE + ":payment";
+	private static final String PAYMENT_REL = "payment";
 
 	private static final String FIRST_ORDER_EXPRESSION = String.format("$._embedded.%s[0]", ORDERS_REL);
 

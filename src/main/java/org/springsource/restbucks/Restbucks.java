@@ -42,11 +42,11 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @EnableAsync
 public class Restbucks {
 
-	public static String CURIE_NAMESPACE = "restbucks";
-
-	public @Bean CurieProvider curieProvider() {
-		return new DefaultCurieProvider(CURIE_NAMESPACE, new UriTemplate("http://localhost:8080/profile/{rel}"));
-	}
+//	public static String CURIE_NAMESPACE = "restbucks";
+//
+//	public @Bean CurieProvider curieProvider() {
+//		return new DefaultCurieProvider(CURIE_NAMESPACE, new UriTemplate("http://localhost:8080/profile/{rel}"));
+//	}
 
 	/**
 	 * Bootstraps the application in standalone mode (i.e. java -jar).

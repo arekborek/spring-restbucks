@@ -38,7 +38,8 @@ class PaymentLinks {
 
 	static final String PAYMENT = "/payment";
 	static final String RECEIPT = "/receipt";
-	static final String PAYMENT_REL = Restbucks.CURIE_NAMESPACE + ":payment";
+//	static final String PAYMENT_REL = Restbucks.CURIE_NAMESPACE + ":payment";
+	static final String PAYMENT_REL = "payment";
 	static final String RECEIPT_REL = "receipt";
 
 	private final @NonNull EntityLinks entityLinks;
