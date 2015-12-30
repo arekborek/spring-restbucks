@@ -1,5 +1,6 @@
 package org.springsource.restbucks.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.springsource.restbucks.core.AbstractEntity;
 
@@ -22,7 +23,7 @@ import static lombok.AccessLevel.PROTECTED;
 public class User extends AbstractEntity {
 
     private @NotNull String login;
-    private @NotNull String password;
+    private @NotNull @JsonIgnore String password;
     private @Enumerated(EnumType.STRING) @NotNull Role role;
 
 }

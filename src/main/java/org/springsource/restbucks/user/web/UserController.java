@@ -20,7 +20,6 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @Controller
 @RequestMapping("/users")
-@ExposesResourceFor(User.class)
 @RequiredArgsConstructor(onConstructor = @__(@Autowired) )
 public class UserController {
 
