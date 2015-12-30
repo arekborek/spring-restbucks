@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotNull;
+import java.util.Optional;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -19,4 +20,8 @@ public class UserServiceImpl  implements UserService {
         return StreamSupport.stream(userRepository.findAll().spliterator(), false);
     }
 
+    @Override
+    public Optional<User> load(Long userId) {
+        return Optional.ofNullable(userRepository.findOne(userId));
+    }
 }
