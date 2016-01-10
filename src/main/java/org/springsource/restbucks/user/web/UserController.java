@@ -36,7 +36,7 @@ public class UserController {
         return ResponseEntity.ok(resource);
     }
 
-    @PreAuthorize("@_security_service.canAccessUser(principal, #userId)")
+    @PreAuthorize("@securityService.canAccessUser(#userId)")
     @RequestMapping(path = "/{userId}", method = GET)
     public HttpEntity get(@PathVariable Long userId) {
         return userService.load(userId)
